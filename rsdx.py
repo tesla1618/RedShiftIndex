@@ -27,6 +27,16 @@ assets = {
     "txt": []
 }
 
+#       LOGO PATH
+
+
+thisPath = os.path.dirname(os.path.abspath(__file__))
+logoPath = os.path.join(thisPath, 'assets','img','logo','rsdx.png')
+# print(logoPath)
+
+images = {
+    "logo": [logoPath]
+}
 
 #       RESET ITEMS OF WINDOWS
 
@@ -55,7 +65,7 @@ class LoginPage(QDialog):
 
         logo = QLabel()
         thisPath = os.getcwd()
-        image = QPixmap(str(thisPath) + "/RSDX/assets/img/logo/rsdx.png")
+        image = QPixmap(str(logoPath))
         print(thisPath)
         image = image.scaled(199,50)
         logo.setPixmap(image)
@@ -150,9 +160,9 @@ def homescreen():
     )
 
     logo = QLabel()
-    thisPath = os.getcwd()
-    image = QPixmap(str(thisPath) + "/RSDX/assets/img/logo/rsdx.png")
-    print(thisPath)
+    # print(fullPath)
+    image = QPixmap(str(logoPath))
+    # print(thisPath)
     image = image.scaled(199,50)
     logo.setPixmap(image)
     logo.setAlignment(Qt.AlignHCenter)
