@@ -32,6 +32,8 @@ assets = {
 
 thisPath = os.path.dirname(os.path.abspath(__file__))
 logoPath = os.path.join(thisPath, 'assets','img','logo','rsdx.png')
+# /home/tesla/SOFTDEV2/RSDX/assets/gifs/bg.jpg
+bgPath = os.path.join(thisPath, 'assets','gifs','bg.jpg')
 # print(logoPath)
 
 images = {
@@ -154,7 +156,7 @@ def homescreen():
 
     window.setStyleSheet(
     "background: #1e1f1e;"
-    "background-image: url('/home/tesla/SOFTDEV2/RSDX/assets/gifs/bg.jpg');"
+    "background-image: url('"+str(bgPath)+"');"
     "background-repeat: no-repeat;"
     "background-position: center;"
     )
