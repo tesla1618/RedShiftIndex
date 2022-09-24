@@ -24,7 +24,8 @@ assets = {
     "anon_button": [],
     "uname_tbox": [],
     "passwd_tbox": [],
-    "txt": []
+    "txt": [],
+    "home_btn": [],
 }
 
 #       LOGO PATH
@@ -54,6 +55,8 @@ def reset_window():
 
 
 #       CUSTOM PAGE FUNCTIONS
+
+#       LOGIN PAGE
 class LoginPage(QDialog):
     
 
@@ -147,8 +150,122 @@ class LoginPage(QDialog):
         print(f"Success Code: 1000 - Connection done! ")
 
 
+#       REGISTRATION PAGE
 
-#HOMESCREEN FUNCTION
+class RegPage(QDialog):
+    def __init__(self):
+        super(RegPage, self).__init__()
+        reset_window()
+        print(f"CLICKED")
+        window.setStyleSheet(
+        "background: #1e1f1e;"
+        )
+
+        logo = QLabel()
+        thisPath = os.getcwd()
+        image = QPixmap(str(logoPath))
+        print(thisPath)
+        image = image.scaled(199,50)
+        logo.setPixmap(image)
+        logo.setAlignment(Qt.AlignTop)
+        logo.setStyleSheet(
+            "margin: 30px 0 0 30px;"
+            "text-align: center;"
+        )
+
+        assets["logo"].append(logo)
+
+
+        login_menu_text = QLabel("Registration for new users.")
+        login_menu_text.setStyleSheet(
+            "margin: 3px 30px 4px 30px;"
+            "color: white;"
+        )
+
+        assets["txt"].append(login_menu_text)
+
+        self.uname = QLineEdit()
+        self.uname.setAlignment(Qt.AlignLeft)
+        self.uname.setPlaceholderText("NAME")
+        self.uname.setStyleSheet(
+            "border: 1px solid gray;"
+            "padding: 18px;"
+            "color: #303030;"
+            "background: white;"
+            "margin:3px 180px 3px 180px;"
+            "border-radius: 8px;"
+        )
+
+        
+
+        assets["uname_tbox"].append(self.uname)
+
+        passwd = QLineEdit()
+        passwd.setAlignment(Qt.AlignLeft)
+        passwd.setPlaceholderText("PASSWORD")
+        passwd.setStyleSheet(
+            "border: 1px solid gray;"
+            "padding: 18px;"
+            "color: #303030;"
+            "background: white;"
+            "margin:3px 180px 3px 180px;"
+            "border-radius: 8px;"
+        )
+
+        assets["passwd_tbox"].append(passwd)
+
+
+        self.home_btn = QPushButton("Home")
+        self.home_btn.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.home_btn.clicked.connect(homescreen)
+
+        self.home_btn.setStyleSheet(
+            "* {border: 1px solid '#09485F';"
+            "background: #09485F;" 
+            "color:white;" 
+            "font-size: 20px;" 
+            "border-radius:8px;"
+            "margin: 3px 180px 170px 180px;"
+            "width:50%;"
+            "padding:20px;}" 
+            " *:hover{ background: none; color: 'white'; } "
+        )
+
+        assets["home_btn"].append(self.home_btn)
+
+        self.reg_button = QPushButton("SIGN UP")
+        self.reg_button.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.reg_button.setStyleSheet(
+            "* {border: 1px solid '#232C49';"
+            "background: #232C49;" 
+            "color:white;" 
+            "font-size: 20px;" 
+            "width:50px;"
+            "border-radius:8px;"
+            "margin: 8px 180px 5px 180px;"
+            "padding:20px;}" 
+            " *:hover{ background: none; color: 'white'; } "
+        )
+        assets["reg_button"].append(self.reg_button)
+
+        self.reg_button.clicked.connect(homescreen)
+
+        grid.addWidget(assets["logo"][-1],1,1)
+        grid.addWidget(assets["txt"][-1],2,1)
+        grid.addWidget(assets["uname_tbox"][-1],3,1)
+        grid.addWidget(assets["passwd_tbox"][-1],4,1)
+        grid.addWidget(assets["reg_button"][-1],5,1)
+        grid.addWidget(assets["home_btn"][-1],6,1)
+
+    def clickTest(self):
+        x = self.uname.text()
+        prSt()
+    def prSt(self):
+        print(f"Success Code: 1000 - Connection done! ")
+
+
+
+#       HOMESCREEN FUNCTION
 
 def homescreen():
 
@@ -156,7 +273,7 @@ def homescreen():
 
     window.setStyleSheet(
     "background: #1e1f1e;"
-    "background-image: url('"+str(bgPath)+"');"
+    "background-image: url('" +bgPath+ "');"
     "background-repeat: no-repeat;"
     "background-position: center;"
     )
@@ -205,6 +322,7 @@ def homescreen():
     )
 
     assets["reg_button"].append(reg_button)
+    reg_button.clicked.connect(RegPage)
 
 
     anon_button = QPushButton("BROWSE ANONYMOUSLY")
