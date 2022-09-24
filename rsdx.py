@@ -28,6 +28,10 @@ assets = {
     "home_btn": [],
 }
 
+btns ={
+    "home_btn": []
+}
+
 #       LOGO PATH
 
 
@@ -54,7 +58,98 @@ def reset_window():
 
 
 
-#       CUSTOM PAGE FUNCTIONS
+#       CUSTOM PAGE CLASSES AND FUNCTIONS
+
+
+#       MAIN
+
+class RedShift(QDialog):
+
+    def __init__(self):
+        super(RedShift, self).__init__()
+        reset_window()
+
+        window.setStyleSheet(
+        "background: #1e1f1e;"
+        )
+
+        logo = QLabel()
+        thisPath = os.getcwd()
+        image = QPixmap(str(logoPath))
+        print(thisPath)
+        image = image.scaled(199,50)
+        logo.setPixmap(image)
+        logo.setAlignment(Qt.AlignTop)
+        logo.setStyleSheet(
+            "margin: 30px 0 0 30px;"
+            "text-align: center;"
+        )
+
+        assets["logo"].append(logo)
+
+        wtext = QLabel(
+            "Welcome to RedShift Index, an astrowiki with detailed Information about"+
+            "stars, nebulas, clausters, galaxies, planets etc."
+            )
+        wtext.setStyleSheet(
+            "background: #353535;"
+            "border-radius:10px;"
+            "color: white;"
+            "padding: 10px;"
+            "margin: 10px 10px 400px 10px"
+        )
+        assets["txt"].append(wtext)
+
+        home_btn = QPushButton("Log Out")
+        home_btn.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        home_btn.clicked.connect(homescreen)
+
+        home_btn.setStyleSheet(
+            "* {border: 1px solid '#FB4343';"
+            "background: #FB4343;" 
+            "color:white;" 
+            "font-size: 20px;" 
+            "border-radius:8px;"
+            "margin: 3px 180px 0px 18px;"
+            "width:50%;"
+            "padding:5px;}" 
+            " *:hover{ background: none; color: 'white'; } "
+        )
+
+        # assets["home_btn"].append(self.home_btn)
+        btns["home_btn"].append(home_btn)
+
+        home2_btn = QPushButton("Home")
+        home2_btn.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        home2_btn.clicked.connect(homescreen)
+
+        home2_btn.setStyleSheet(
+            "* {border: 1px solid '#FB4343';"
+            "background: #FB4343;" 
+            "color:white;" 
+            "font-size: 20px;" 
+            "border-radius:8px;"
+            "margin: 3px 18px 0px 180px;"
+            "width:50%;"
+            "padding:5px;}" 
+            " *:hover{ background: none; color: 'white'; } "
+        )
+
+        assets["home_btn"].append(home2_btn)
+
+        home_btn.resize(50,50)
+        home2_btn.resize(50,50)
+        home2_btn.setGeometry(100,100,400,500)
+        home_btn.setGeometry(500,100,400,500)
+        grid.addWidget(assets["logo"][-1],1,1)
+        grid.addWidget(assets["txt"][-1],2,1)
+        # grid.addWidget(btns["home_btn"][-1],3,1)
+        # grid.addWidget(assets["home_btn"][-1],3,1)
+
+
+
+
+
 
 #       LOGIN PAGE
 class LoginPage(QDialog):
@@ -135,7 +230,7 @@ class LoginPage(QDialog):
             " *:hover{ background: none; color: 'white'; } "
         )
         assets["login_button"].append(self.login_button)
-        self.login_button.clicked.connect(homescreen)
+        self.login_button.clicked.connect(RedShift)
 
         grid.addWidget(assets["logo"][-1],1,1)
         grid.addWidget(assets["txt"][-1],2,1)
