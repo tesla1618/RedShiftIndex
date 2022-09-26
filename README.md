@@ -11,4 +11,4 @@
 - [Golam Rabbani Abir](https://github.com/Abir0606)
 - [Saria Alam](https://github.com/SariaAlam)
 
-From [Bangladesh University of Business & Technoly](https://bubt.edu.bd) - Department of Computer Science and Engineering
+From [Bangladesh University of Business & Technology](https://bubt.edu.bd) - Department of Computer Science and Engineering
