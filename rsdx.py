@@ -89,7 +89,7 @@ class RedShift(QDialog):
 
         wtext = QLabel(
             "Welcome to RedShift Index, an astrowiki with detailed Information about"+
-            "stars, nebulas, clausters, galaxies, planets etc."
+            "stars, nebulas,\n clausters, galaxies, planets etc."
             )
         wtext.setStyleSheet(
             "background: #353535;"
