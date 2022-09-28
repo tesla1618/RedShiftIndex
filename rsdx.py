@@ -433,6 +433,7 @@ def homescreen():
     )
 
     assets["anon_button"].append(anon_button)
+    anon_button.clicked.connect(RedShift)
 
 
 
