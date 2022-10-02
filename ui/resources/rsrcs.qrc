@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="jpeg">
+    <file>logo/rsdx.png</file>
+  </qresource>
+</RCC>
