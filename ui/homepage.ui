@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWIndow</class>
+ <widget class="QMainWindow" name="MainWIndow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>720</width>
+    <height>550</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>720</width>
+    <height>550</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>720</width>
+    <height>550</height>
+   </size>
+  </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::NoFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: #1e1f1e;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="logo">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>199</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources/rsrcs.qrc">:/jpeg/logo/rsdx.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="wlcText">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>260</y>
+      <width>291</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: #353535;
+border-radius:10px;
+color: white;
+padding: 10px;</string>
+    </property>
+    <property name="text">
+     <string>Welcome to Redshift Index!</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="homeBtn">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>20</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{
+border: 0px solid transparent;
+background: white;
+color: #353535;
+padding: 5px 0px 5px 5px;
+}
+*:hover{
+border-bottom: 3px solid rgb(46, 194, 126);
+}</string>
+    </property>
+    <property name="text">
+     <string>/  home</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="catsBtn">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>20</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{
+border: 0px solid transparent;
+background: white;
+color: #353535;
+padding: 5px 0px 5px 0px;
+}
+*:hover{
+border-bottom: 3px solid rgb(46, 194, 126);
+}</string>
+    </property>
+    <property name="text">
+     <string>/  cats</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="tryBtn">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>20</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{
+border: 0px solid transparent;
+background: white;
+color: #353535;
+padding: 5px 0px 5px 0px;
+}
+*:hover{
+border-bottom: 3px solid rgb(46, 194, 126);
+}</string>
+    </property>
+    <property name="text">
+     <string>/  try</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="gearBtn">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>20</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{
+border: 0px solid transparent;
+background: white;
+color: #353535;
+padding: 5px 0px 5px 0px;
+}
+*:hover{
+border-bottom: 3px solid rgb(46, 194, 126);
+}</string>
+    </property>
+    <property name="text">
+     <string>/  gear  /</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="shutBtn">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>20</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{
+border: 0px solid transparent;
+background: white;
+color: rgb(237, 51, 59);
+padding: 5px 0px 5px 0px;
+}
+*:hover{
+border-bottom: 3px solid rgb(237, 51, 59);
+}</string>
+    </property>
+    <property name="text">
+     <string>shut</string>
+    </property>
+   </widget>
+   <zorder>wlcText</zorder>
+   <zorder>logo</zorder>
+   <zorder>homeBtn</zorder>
+   <zorder>catsBtn</zorder>
+   <zorder>tryBtn</zorder>
+   <zorder>gearBtn</zorder>
+   <zorder>shutBtn</zorder>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="resources/rsrcs.qrc"/>
+ </resources>
+ <connections/>
+</ui>
