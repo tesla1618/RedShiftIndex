@@ -55,17 +55,16 @@ class RSDXLoginPage(QMainWindow):
         self.logo.setPixmap(QtGui.QPixmap('rsdx.png'))
         self.show()
 
-        self.loginBtn.clicked.connect(self.prclick)
+        self.loginBtn.clicked.connect(self.methodLogin)
         self.regBtn.clicked.connect(self.goToReg)
 
-    def prclick(self):
+    def methodLogin(self):
         un = self.uname.text()
         pwd = self.passwd.text()
-        print(un)
-        print(pwd)
-        if un == "admin":
-            redirect("RSDXRegPage")
-        else:
+        try:
+            auth.sign_in_with_email_and_password(un, pwd)
+            redirect("HomePage")
+        except:
             UI.loginPage(self)
     def goToReg(self):
         rdTo = "RSDXRegPage"
@@ -77,25 +76,30 @@ class RSDXRegPage(QMainWindow):
 
 
         uic.loadUi(uiPath+"/reg_page.ui", self)
-        self.img = self.findChild(QLabel, 'logo')
-        self.img.setStyleSheet(
-            "color:white;"
-        )
         self.logo.setPixmap(QtGui.QPixmap('rsdx.png'))
         self.show()
 
-        # self.loginBtn.clicked.connect(self.prclick)
+        self.regBtn.clicked.connect(self.verify)
 
-    # def prclick(self):
-    #     un = self.uname.text()
-    #     pwd = self.passwd.text()
-    #     print(un)
-    #     print(pwd)
-    #     if un == "admin":
-    #         menu = UI()
-    #         widget.addWidget(menu)
-    #         widget.setCurrentIndex(widget.currentIndex()+1)
-    #         UI()
+    def verify(self):
+        un = self.uname.text()
+        pwd = self.passwd.text()
+        try:
+            auth.create_user_with_email_and_password(un, pwd)
+            redirect("HomePage")
+        except:
+            redirect("RSDXRegPage")
+
+
+class HomePage(QMainWindow):
+    def __init__(self):
+        super(HomePage, self).__init__()
+        uic.loadUi(uiPath+"/homepage.ui", self)
+        self.logo.setPixmap(QtGui.QPixmap('rsdx.png'))
+        self.show()
+
+        self.shutBtn.clicked.connect(lambda: redirect("UI"))
+
 
 
 app = QApplication(sys.argv)
