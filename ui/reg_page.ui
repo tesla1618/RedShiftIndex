@@ -85,7 +85,7 @@
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>150</y>
+      <y>120</y>
       <width>291</width>
       <height>41</height>
      </rect>
@@ -106,9 +106,9 @@ padding: 10px;</string>
    <widget class="QPushButton" name="regBtn">
     <property name="geometry">
      <rect>
-      <x>-40</x>
-      <y>370</y>
-      <width>791</width>
+      <x>140</x>
+      <y>390</y>
+      <width>221</width>
       <height>71</height>
      </rect>
     </property>
@@ -121,7 +121,6 @@ padding: 10px;</string>
 		background: rgb(53, 132, 228);
 		font-size: 20px;
 		border-radius:10px;
-		margin: 0px 180px 5px 180px;
 		padding:20px;}
        *:hover{ background:none;border: 1px solid rgb(53, 132, 228); color: white; }</string>
     </property>
@@ -133,7 +132,7 @@ padding: 10px;</string>
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>230</y>
+      <y>190</y>
       <width>431</width>
       <height>51</height>
      </rect>
@@ -153,7 +152,7 @@ border-radius: 5px;</string>
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>300</y>
+      <y>250</y>
       <width>431</width>
       <height>51</height>
      </rect>
@@ -169,11 +168,59 @@ border-radius: 5px;</string>
      <string>Password</string>
     </property>
    </widget>
+   <widget class="QLineEdit" name="passwd_2">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>310</y>
+      <width>431</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: #fff;
+padding: 10px;
+color: rgb(94, 92, 100);
+border: 1px solid rgb(94, 92, 100);
+border-radius: 5px;</string>
+    </property>
+    <property name="placeholderText">
+     <string>Retype Password</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="loginBtn">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>390</y>
+      <width>201</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">* {border: 1px solid rgb(51, 209, 122);
+		color:white;
+		background: rgb(51, 209, 122);
+		font-size: 17px;
+		border-radius:10px;
+		padding:15px;}
+       *:hover{ background:none;border: 1px solid rgb(51, 209, 122); color: white; }</string>
+    </property>
+    <property name="text">
+     <string>ALREADY HAVE AN
+ACCOUNT?</string>
+    </property>
+   </widget>
    <zorder>wlcText</zorder>
    <zorder>regBtn</zorder>
    <zorder>logo</zorder>
    <zorder>uname</zorder>
    <zorder>passwd</zorder>
+   <zorder>passwd_2</zorder>
+   <zorder>loginBtn</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
