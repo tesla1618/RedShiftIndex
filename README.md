@@ -1,3 +1,5 @@
+<br/>
+
 # RedShiftIndex
 
 >//Currently in Early Development Stage
@@ -5,14 +7,14 @@
 RedShift Index is a python based desktop software which features functions like AstroWIki, Astrophotography, Astrophysics related information, Problem solving on Astrophysics and Astronomy / Mathematical Astronomy. Astrophysics is a branch of space science that applies the laws of physics and chemistry to seek to understand the universe and our place in it. RedShift Index helps its users to know about Astrophysics more.
 
 We aim to make a desktop software with legitimate information both in **Bengali** and **English** Language on Astronomical objects, events and news along with a dedicated section for its users to practice problems like AstroOlympiads in order to attract more people into Astrophysics and explore its significance and beauty.
+<br/><br/><br/>
+## REQUIRED
 
-# REQUIRED
-
-`pip` package management system.
+`pip` package management system. <br/>
 System with `python` and `git` installed
 
 
-# Install `pip` and `git`
+### ✅ Install `pip` and `git`
 
 #### ARCH LINUX:
 ```
@@ -37,11 +39,15 @@ $ sudo dnf install --assumeyes python3-pip
 
 _Follow instructions from pip website_
 
+<br>
 
 ## RUN REDSHIFT
 
 
-`$ git clone https://github.com/tesla1618/RedShiftIndex.git`
+```
+$ git clone https://github.com/tesla1618/RedShiftIndex.git
+```
+Output:
 ```
 git clone https://github.com/tesla1618/RedShiftIndex.git                    ⏎
 Cloning into 'RedShiftIndex'...
@@ -53,11 +59,12 @@ Receiving objects: 100% (136/136), 7.01 MiB | 955.00 KiB/s, done.
 Resolving deltas: 100% (47/47), done.
 
 ```
+now,
 ```
 $ cd RedShiftIndex
 $ python main.py
 ```
-
+<br/>
 
 ## Behind RedShiftIndex
 
