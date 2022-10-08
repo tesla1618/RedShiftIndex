@@ -1,4 +1,6 @@
 from header import *
+
+
 userLoggedIn = True
 
 
@@ -21,7 +23,7 @@ class UI(QMainWindow):
     def __init__(self):
         super(UI, self).__init__()
 
-
+        self.setWindowTitle("RedShift")
         uic.loadUi(uiPath+"/main_window.ui", self)
         self.img = self.findChild(QLabel, 'logo')
         self.img.setStyleSheet(
@@ -65,6 +67,8 @@ class RSDXLoginPage(QMainWindow):
 
     def methodLogin(self):
         un = self.uname.text()
+        userNow[0] = un
+        un = un + "@red.shift"
         pwd = self.passwd.text()
         try:
             auth.sign_in_with_email_and_password(un, pwd)
@@ -83,7 +87,6 @@ class RSDXRegPage(QMainWindow):
         uic.loadUi(uiPath+"/reg_page.ui", self)
         self.logo.setPixmap(QtGui.QPixmap('rsdx.png'))
         self.show()
-
         self.regBtn.clicked.connect(self.verify)
         self.loginBtn.clicked.connect(self.gotAccount)
 
@@ -93,6 +96,7 @@ class RSDXRegPage(QMainWindow):
 
     def verify(self):
         un = self.uname.text()
+        un = un + "@red.shift"
         pwd = self.passwd.text()
         pwd2 = self.passwd_2.text()
         if pwd == pwd2:
@@ -109,22 +113,51 @@ class RSDXRegPage(QMainWindow):
 
 class HomePage(QMainWindow):
     def __init__(self):
+        # print(userNow[0])
         super(HomePage, self).__init__()
         uic.loadUi(uiPath+"/homepage.ui", self)
         self.logo.setPixmap(QtGui.QPixmap('rsdx.png'))
+        self.wlcText.setText("Welcome "+ userNow[0])
+        
         if not userLoggedIn:
             self.shutBtn.hide()
         self.show()
 
-        self.shutBtn.clicked.connect(lambda: redirect("UI"))
+        self.shutBtn.clicked.connect(self.shutUser)
+        self.gearBtn.clicked.connect(lambda: redirect("UserSettings"))
+
+    def shutUser(self):
+        userNow[0] = "Anon"
+        redirect("UI")
+
+
+
+class UserSettings(QMainWindow):
+
+    def __init__(self):
+        super(UserSettings, self).__init__()
+        uic.loadUi(uiPath+"/user_settings.ui", self)
+        self.logo.setPixmap(QtGui.QPixmap('rsdx.png'))
+        self.updateUname.setDisabled(True)
+        self.updateUname.setPlaceholderText(userNow[0])
+        self.returnBtn.clicked.connect(lambda: redirect("HomePage"))
+        self.show()
 
 
 
 app = QApplication(sys.argv)
+fontbase = QtGui.QFontDatabase()
+test = fontbase.addApplicationFont("/CascadiaCode.ttf")
+cascode = QtGui.QFont("Arial", 10)
+app.setFont(cascode)
+
+
+
 rsdx = UI()
 widget = QtWidgets.QStackedWidget()
 widget.addWidget(rsdx)
 widget.setWindowIcon(QtGui.QIcon('redshift_icon.png'))
+widget.setWindowTitle("RedShift Index")
 widget.setFixedHeight(550)
 widget.setFixedWidth(720)
 widget.show()
