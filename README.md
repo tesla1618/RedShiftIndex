@@ -30,12 +30,12 @@ $ sudo apt upgrade
 $ sudo apt install python-pip git
 ```
 
-### RHEL / FEDORA / CENTOS:
+#### RHEL / FEDORA / CENTOS:
 ```
 $ sudo dnf install --assumeyes python3-pip
 ```
 
-### WINDOWS/MAC:
+#### WINDOWS/MAC:
 
 _Follow instructions from pip website_
 
@@ -66,7 +66,7 @@ $ python main.py
 ```
 <br/>
 
-## Behind RedShiftIndex
+## BEHIND RedShiftIndex
 
 - [Rajieb Rojarieo](https://github.com/tesla1618)
 - [Mumtahina Ahmed](https://github.com/remesis)
