@@ -49,7 +49,7 @@ $ git clone https://github.com/tesla1618/RedShiftIndex.git
 ```
 Output:
 ```
-git clone https://github.com/tesla1618/RedShiftIndex.git                    ⏎
+❯ git clone https://github.com/tesla1618/RedShiftIndex.git                    ⏎
 Cloning into 'RedShiftIndex'...
 remote: Enumerating objects: 136, done.
 remote: Counting objects: 100% (50/50), done.
