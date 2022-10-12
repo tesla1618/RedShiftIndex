@@ -93,6 +93,10 @@ class RSDXRegPage(QMainWindow):
 
         uic.loadUi(uiPath+"/reg_page.ui", self)
         self.logo.setPixmap(QtGui.QPixmap('rsdx.png'))
+
+        #   Hiding Error Message initially
+        self.errorMsg.hide()
+
         self.show()
         self.regBtn.clicked.connect(self.verify)
         self.loginBtn.clicked.connect(self.gotAccount)
@@ -103,6 +107,7 @@ class RSDXRegPage(QMainWindow):
 
     def verify(self):
         un = self.uname.text()
+        unl = self.uname.text()
         un = un + "@red.shift"
         pwd = self.passwd.text()
         pwd2 = self.passwd_2.text()
@@ -110,12 +115,15 @@ class RSDXRegPage(QMainWindow):
             try:
                 auth.create_user_with_email_and_password(un, pwd)
                 userLoggedIn = True
+                userNow[0] = unl
                 redirect("HomePage")
             except:
                 userLoggedIn = False
-                redirect("RSDXRegPage")
+                self.wlcText.hide()
+                self.errorMsg.show()
         else:
-            redirect("RSDXRegPage")
+            self.wlcText.hide()
+            self.errorMsg.show()
 
 
 class HomePage(QMainWindow):
