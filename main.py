@@ -54,13 +54,17 @@ class RSDXLoginPage(QMainWindow):
     def __init__(self):
         super(RSDXLoginPage, self).__init__()
 
-
         uic.loadUi(uiPath+"/login_page.ui", self)
         self.img = self.findChild(QLabel, 'logo')
         self.img.setStyleSheet(
             "color:white;"
         )
         self.logo.setPixmap(QtGui.QPixmap('rsdx.png'))
+
+        #   Hiding Error Message initially
+        self.errorMsg.hide()
+        
+
         self.show()
 
         self.loginBtn.clicked.connect(self.methodLogin)
@@ -75,7 +79,9 @@ class RSDXLoginPage(QMainWindow):
             auth.sign_in_with_email_and_password(un, pwd)
             redirect("HomePage")
         except:
-            UI.loginPage(self)
+            self.wlcText.hide()
+            self.errorMsg.show()
+            # UI.loginPage(self)
     def goToReg(self):
         rdTo = "RSDXRegPage"
         redirect(rdTo)
