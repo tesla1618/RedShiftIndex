@@ -214,6 +214,28 @@ border-radius: 5px;</string>
 ACCOUNT?</string>
     </property>
    </widget>
+   <widget class="QLabel" name="errorMsg">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>120</y>
+      <width>391</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: rgb(237, 51, 59);
+border-radius:10px;
+color: white;
+padding: 10px;</string>
+    </property>
+    <property name="text">
+     <string>user already exists or passwords didn't match</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
    <zorder>wlcText</zorder>
    <zorder>regBtn</zorder>
    <zorder>logo</zorder>
@@ -221,6 +243,7 @@ ACCOUNT?</string>
    <zorder>passwd</zorder>
    <zorder>passwd_2</zorder>
    <zorder>loginBtn</zorder>
+   <zorder>errorMsg</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
