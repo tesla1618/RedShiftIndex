@@ -3,9 +3,10 @@ import sys, os
 try:
   from PyQt5 import QtWidgets
   from PyQt5.QtWidgets import *
-  from PyQt5 import uic, QtGui
+  from PyQt5 import uic, QtGui, QtCore
   import pyrebase
-  from PyQt5.QtGui import QFont, QFontDatabase
+  from PyQt5.QtGui import *
+  from PyQt5.QtCore import *
 
 except:
   os.system("pip install -r requirements.txt")

@@ -81,26 +81,24 @@
      <number>0</number>
     </property>
    </widget>
-   <widget class="QLabel" name="wlcText">
+   <widget class="QLabel" name="objName">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>80</y>
+      <x>370</x>
+      <y>170</y>
       <width>291</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background: #353535;
-border-radius:10px;
-color: white;
-padding: 10px;</string>
+     <string notr="true">border-bottom:  1px solid rgb(170, 85, 0);
+padding-bottom: 5px;</string>
     </property>
     <property name="text">
-     <string>Welcome to Redshift Index!</string>
+     <string>About the Star</string>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
+    <property name="scaledContents">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="homeBtn">
@@ -242,9 +240,9 @@ border-bottom: 3px solid rgb(237, 51, 59);
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>180</y>
-      <width>161</width>
-      <height>141</height>
+      <y>190</y>
+      <width>261</width>
+      <height>261</height>
      </rect>
     </property>
     <property name="text">
@@ -257,10 +255,10 @@ border-bottom: 3px solid rgb(237, 51, 59);
    <widget class="QPushButton" name="nextPage">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>330</y>
-      <width>161</width>
-      <height>61</height>
+      <x>580</x>
+      <y>470</y>
+      <width>101</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="cursor">
@@ -268,88 +266,28 @@ border-bottom: 3px solid rgb(237, 51, 59);
     </property>
     <property name="styleSheet">
      <string notr="true">color: white;
-background: none;
-border: none;</string>
+background: rgb(53, 132, 228);
+border: 0px solid transparent;
+border-radius: 6px;</string>
     </property>
     <property name="text">
-     <string>Astro Object Saturn</string>
+     <string>Learn More</string>
     </property>
    </widget>
-   <widget class="QLabel" name="imgMain_2">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>190</y>
-      <width>161</width>
-      <height>111</height>
+      <x>370</x>
+      <y>250</y>
+      <width>55</width>
+      <height>18</height>
      </rect>
     </property>
     <property name="text">
-     <string/>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
+     <string> </string>
     </property>
    </widget>
-   <widget class="QPushButton" name="nextPage_2">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>330</y>
-      <width>161</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: white;
-background: none;
-border: none;</string>
-    </property>
-    <property name="text">
-     <string>Astro Object Pluto</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="nextPage_3">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>330</y>
-      <width>161</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: white;
-background: none;
-border: none;</string>
-    </property>
-    <property name="text">
-     <string>Astro Object Earth</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="imgMain_3">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>190</y>
-      <width>161</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <zorder>wlcText</zorder>
+   <zorder>objName</zorder>
    <zorder>logo</zorder>
    <zorder>homeBtn</zorder>
    <zorder>catsBtn</zorder>
@@ -358,10 +296,7 @@ border: none;</string>
    <zorder>shutBtn</zorder>
    <zorder>imgMain</zorder>
    <zorder>nextPage</zorder>
-   <zorder>imgMain_2</zorder>
-   <zorder>nextPage_2</zorder>
-   <zorder>nextPage_3</zorder>
-   <zorder>imgMain_3</zorder>
+   <zorder>label</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

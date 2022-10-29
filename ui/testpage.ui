@@ -238,29 +238,13 @@ border-bottom: 3px solid rgb(237, 51, 59);
      <string>shut</string>
     </property>
    </widget>
-   <widget class="QLabel" name="imgMain">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>180</y>
-      <width>161</width>
-      <height>141</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QPushButton" name="nextPage">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>330</y>
-      <width>161</width>
-      <height>61</height>
+      <x>580</x>
+      <y>470</y>
+      <width>101</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="cursor">
@@ -268,20 +252,21 @@ border-bottom: 3px solid rgb(237, 51, 59);
     </property>
     <property name="styleSheet">
      <string notr="true">color: white;
-background: none;
-border: none;</string>
+background: rgb(53, 132, 228);
+border: 0px solid transparent;
+border-radius: 6px;</string>
     </property>
     <property name="text">
-     <string>Astro Object Saturn</string>
+     <string>Done</string>
     </property>
    </widget>
    <widget class="QLabel" name="imgMain_2">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>390</x>
       <y>190</y>
-      <width>161</width>
-      <height>111</height>
+      <width>261</width>
+      <height>261</height>
      </rect>
     </property>
     <property name="text">
@@ -291,61 +276,25 @@ border: none;</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="nextPage_2">
+   <widget class="QLabel" name="post">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>330</y>
-      <width>161</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: white;
-background: none;
-border: none;</string>
-    </property>
-    <property name="text">
-     <string>Astro Object Pluto</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="nextPage_3">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>330</y>
-      <width>161</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: white;
-background: none;
-border: none;</string>
-    </property>
-    <property name="text">
-     <string>Astro Object Earth</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="imgMain_3">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
+      <x>30</x>
       <y>190</y>
-      <width>161</width>
-      <height>111</height>
+      <width>301</width>
+      <height>261</height>
      </rect>
     </property>
-    <property name="text">
-     <string/>
+    <property name="cursor">
+     <cursorShape>IBeamCursor</cursorShape>
     </property>
-    <property name="scaledContents">
+    <property name="styleSheet">
+     <string notr="true">color:white</string>
+    </property>
+    <property name="text">
+     <string>Proin tempus, nulla vel dignissim lobortis, magna enim tempor massa, ut elementum mi purus sit amet metus. Duis rhoncus leo neque, eu ultricies diam lacinia a. Ut dignissim massa vel convallis blandit. Integer auctor eleifend velit non ullamcorper. Aenean euismod vel ligula maximus convallis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin iaculis nisl eu mauris ultricies iaculis. Nam tempus, velit et luctus aliquam, est elit interdum urna, ut ultricies ex justo semper ipsum. Nunc vitae accumsan metus. Nam odio odio, molestie sed tellus id, viverra pretium enim. Sed imperdiet egestas consequat. Praesent quis metus quis ipsum maximus porta at nec risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec scelerisque tincidunt tellus vitae pulvinar. Suspendisse interdum sodales urna, sed congue magna accumsan ac.</string>
+    </property>
+    <property name="wordWrap">
      <bool>true</bool>
     </property>
    </widget>
@@ -356,12 +305,9 @@ border: none;</string>
    <zorder>tryBtn</zorder>
    <zorder>gearBtn</zorder>
    <zorder>shutBtn</zorder>
-   <zorder>imgMain</zorder>
    <zorder>nextPage</zorder>
    <zorder>imgMain_2</zorder>
-   <zorder>nextPage_2</zorder>
-   <zorder>nextPage_3</zorder>
-   <zorder>imgMain_3</zorder>
+   <zorder>post</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
