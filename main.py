@@ -187,8 +187,8 @@ class HomePage(QMainWindow):
         dBconf.getPlanetInfo(pk)
         uic.loadUi(uiPath+"/planet_info.ui", self)
         self.logo.setPixmap(QtGui.QPixmap('rsdx.png'))
-        self.thumb.setPixmap(QtGui.QPixmap(str(dBconf.getPlanetInfo.thumb)))
-        print(str(iThumb)+'/'+str(pk)+'/'+str(pk)+'.png')
+        self.thumb.setPixmap(QtGui.QPixmap( str(iThumb)+'/'+str(pk)+'/'+str(pk)+'.jpg' ))
+        # print(str(iThumb)+'/'+str(pk)+'/'+str(pk)+'.png')
         self.title.setText("About "+str(dBconf.getPlanetInfo.name))
         self.name.setText(str(dBconf.getPlanetInfo.name))
         self.mass.setText(str(dBconf.getPlanetInfo.mass))
@@ -197,6 +197,11 @@ class HomePage(QMainWindow):
         self.made.setText(str(dBconf.getPlanetInfo.madeof))
         self.lum.setText(str(dBconf.getPlanetInfo.lum))
         self.vis.setText(str(dBconf.getPlanetInfo.visible))
+        # self.nextBtn.clicked.connect(self.broadInfo)
+
+    def broadInfo(self):
+        pass
+
 
     def shutUser(self):
         userNow[0] = "Anon"
