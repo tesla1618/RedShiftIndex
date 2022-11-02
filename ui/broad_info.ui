@@ -81,6 +81,29 @@
      <number>0</number>
     </property>
    </widget>
+   <widget class="QLabel" name="body">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>160</y>
+      <width>641</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+padding:10px</string>
+    </property>
+    <property name="text">
+     <string>About the Star</string>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+   </widget>
    <widget class="QPushButton" name="homeBtn">
     <property name="geometry">
      <rect>
@@ -162,228 +185,55 @@ border-bottom: 3px solid rgb(237, 51, 59);
      <string>shut</string>
     </property>
    </widget>
-   <widget class="QLabel" name="i1">
+   <widget class="QPushButton" name="backPage">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>580</x>
+      <y>470</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+background: rgb(53, 132, 228);
+border: 0px solid transparent;
+border-radius: 6px;</string>
+    </property>
+    <property name="text">
+     <string>Go Back</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="title">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
       <y>90</y>
-      <width>141</width>
-      <height>131</height>
+      <width>291</width>
+      <height>41</height>
      </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="t1">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>220</y>
-      <width>161</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: white;
-background: none;
-border: none;</string>
+     <string notr="true">border-bottom:  1px solid rgb(170, 85, 0);
+padding-bottom: 5px;</string>
     </property>
     <property name="text">
-     <string>Astro Object Saturn</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="t2">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>220</y>
-      <width>161</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: white;
-background: none;
-border: none;</string>
-    </property>
-    <property name="text">
-     <string>Astro Object Pluto</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="t3">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>220</y>
-      <width>161</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: white;
-background: none;
-border: none;</string>
-    </property>
-    <property name="text">
-     <string>Astro Object Earth</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="i2">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>90</y>
-      <width>141</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
+     <string>More </string>
     </property>
     <property name="scaledContents">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="i3">
-    <property name="geometry">
-     <rect>
-      <x>500</x>
-      <y>90</y>
-      <width>141</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="i6">
-    <property name="geometry">
-     <rect>
-      <x>500</x>
-      <y>290</y>
-      <width>141</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="t6">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>420</y>
-      <width>161</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: white;
-background: none;
-border: none;</string>
-    </property>
-    <property name="text">
-     <string>Astro Object Earth</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="i5">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>290</y>
-      <width>141</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="t5">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>420</y>
-      <width>161</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: white;
-background: none;
-border: none;</string>
-    </property>
-    <property name="text">
-     <string>Astro Object Pluto</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="i4">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>290</y>
-      <width>141</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="t4">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>420</y>
-      <width>161</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: white;
-background: none;
-border: none;</string>
-    </property>
-    <property name="text">
-     <string>Astro Object Saturn</string>
-    </property>
-   </widget>
+   <zorder>body</zorder>
+   <zorder>logo</zorder>
+   <zorder>homeBtn</zorder>
+   <zorder>gearBtn</zorder>
+   <zorder>shutBtn</zorder>
+   <zorder>backPage</zorder>
+   <zorder>title</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

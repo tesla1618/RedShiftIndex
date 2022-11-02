@@ -41,7 +41,7 @@ c.execute(
 c.execute(
     '''
     CREATE TABLE IF NOT EXISTS basicInfo
-    ([pk] INTEGER PRIMARY KEY,[Objname] TEXT, [mass] REAL, [radius] REAL, [disEarth] REAL, [madeOf] TEXT, [lum] REAL, [visEarth] TEXT, [thumbnail] BLOB)
+    ([pk] INTEGER PRIMARY KEY,[Objname] TEXT, [mass] TEXT, [radius] TEXT, [disEarth] TEXT, [madeOf] TEXT, [lum] TEXT, [visEarth] TEXT, [thumbnail] BLOB)
     '''
 )
 
@@ -103,18 +103,9 @@ def makeUserLoggedIn(un,pwd):
     pdpass = getUserInfo['userPassword'].to_string(index=False)
     if pwd == pdpass:
         makeUserLoggedIn.fetchError = False
-        # print("\n\tLogin Successfull")
+
     else:
         makeUserLoggedIn.fetchError = True
-        # print("\n\tIncorrect Password")
-
-
-
-# lst = ["/home/tesla/RedShift/images/thumbnails/6/saturnv2.jpg"]
-# lst2 = [l.split("/") for l in lst]
-# lth = len(lst2[0])
-# print(lth)
-# print(lst2[0][7])
 
 
 
@@ -137,14 +128,10 @@ def addObjInfoToDB(name,mass,radius,disEarth,madeOf,lum,visible,brinfo,thumbPath
     lst2 = [l.split("/") for l in lst]
     lth = len(lst2[0])
     thumbName = lst2[0][lth-1]
-    # print(fName)
-    # print(lth)
     print(thumbName)
     os.system(f"mv {parent}/images/thumbnails/{pk}/{thumbName} {parent}/images/thumbnails/{pk}/{pk}.jpg")
 
     newThumbPath = f"{parent}/images/thumbnails/{pk}/{pk}.jpg"
-
-    # os.system(f"mv {pk}.jpg")
     try:
         c.execute(
             '''
@@ -168,12 +155,12 @@ def addObjInfoToDB(name,mass,radius,disEarth,madeOf,lum,visible,brinfo,thumbPath
         )
         dBconnect.commit()
         addObjInfoToDB.fetchError = False
-        # print(pk,name,newThumbPath)
+
     except:
         addObjInfoToDB.fetchError = True
 
 
-# os.system(f"mkdir {curDir}/images/thumbnails/")
+
 
 
 
@@ -196,7 +183,14 @@ def getPlanetInfo(pk):
     getPlanetInfo.thumb = val[8]
     # print(name,mass,radius,dis,madeof,lum,visible,thumb)
 
-getPlanetInfo(0)
+    c.execute(
+        '''
+        SELECT * from broadInfo WHERE pk = ?
+        ''',(pk,)
+    )
+    bval = c.fetchone()
+    getPlanetInfo.body = bval[1]
+ 
 
 
 c.execute(
@@ -205,63 +199,20 @@ c.execute(
     '''
 )
 
-print("\n----------------------\n\t TABLE:::\n------------------------")
-# getUserInfo = pd.DataFrame(c.fetchall(),columns=['pk', 'objectName', 'thumbnail'])
-# print(getUserInfo)
-record = c.fetchone()
-print(record[1])
-c.execute(
-    '''
-    SELECT * FROM basicInfo
-    '''
-)
-
-print("\n----------------------\n\t TABLE:::\n------------------------")
-getUserInfo = pd.DataFrame(c.fetchall(),columns=['pk', 'Objname', 'mass','radius','disEarth','madeOf','lum','visEarth','thumbnail'])
-print(getUserInfo)
-c.execute(
-    '''
-    SELECT * FROM broadInfo
-    '''
-)
-
-print("\n----------------------\n\t TABLE:::\n------------------------")
-getUserInfo = pd.DataFrame(c.fetchall(),columns=['pk', 'postBody'])
-print(getUserInfo)
-# [pk] INTEGER PRIMARY KEY,[Objname] TEXT, [mass] REAL, [radius] REAL, [disEarth] REAL, [madeOf] TEXT, [lum] REAL, [visEarth] TEXT, [thumbnail] BLOB
-
-
-
-
-
-# inpk = int(input("pk: "))
-# inName = input("Obj Nmae: ")
-# inThumb = input("Thumb: ")
-
-
-# try:
-#     c.execute(
-#         '''
-#         INSERT INTO homeInfo(pk, objectName, thumbnail)
-#         VALUES (?,?,?)
-#         ''', (inpk,inName,inThumb)
-#     )
-# except:
-#     print("PK already exists!")
-
-dBconnect.commit()
-
-
-
-# dBconnect.close()
-
-
+# print("\n----------------------\n\t TABLE:::\n------------------------")
+# # getUserInfo = pd.DataFrame(c.fetchall(),columns=['pk', 'objectName', 'thumbnail'])
+# # print(getUserInfo)
+# record = c.fetchone()
+# print(record[1])
 # c.execute(
 #     '''
-#     SELECT * FROM homeInfo
+#     SELECT * FROM basicInfo
 #     '''
 # )
 
+# print("\n----------------------\n\t TABLE:::\n------------------------")
+# getUserInfo = pd.DataFrame(c.fetchall(),columns=['pk', 'Objname', 'mass','radius','disEarth','madeOf','lum','visEarth','thumbnail'])
+# print(getUserInfo)
 
-# getVal = pd.DataFrame(c.fetchall(),columns=['pk','objectName','thumbnail'])
-# print(getVal)
+
+dBconnect.commit()

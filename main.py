@@ -135,6 +135,7 @@ class RSDXRegPage(QMainWindow):
         self.show()
         self.regBtn.clicked.connect(self.verify)
         self.loginBtn.clicked.connect(self.gotAccount)
+        self.nav_homeBtn.clicked.connect(lambda:redirect("UI"))
 
 
     def gotAccount(self):
@@ -166,22 +167,43 @@ class RSDXRegPage(QMainWindow):
 
 class HomePage(QMainWindow):
     def __init__(self):
-        # print(userNow[0])
+        pks = [0,1,2,3,4,5,6]
+
         super(HomePage, self).__init__()
         uic.loadUi(uiPath+"/homepage.ui", self)
         self.logo.setPixmap(QtGui.QPixmap('rsdx.png'))
-        # self.wlcText.setText("Welcome "+ userNow[0])
-        self.i1.setPixmap(QtGui.QPixmap('saturn-v2.jpg'))
-        # self.post.setWordWrap(True)
-        # self.scrollArea.setWidget(self.post)      
+
+        self.i1.setPixmap(QtGui.QPixmap( str(iThumb)+'/'+str(pks[0])+'/'+str(pks[0])+'.jpg' ))      
+        self.i2.setPixmap(QtGui.QPixmap( str(iThumb)+'/'+str(pks[1])+'/'+str(pks[1])+'.jpg' ))      
+        self.i3.setPixmap(QtGui.QPixmap( str(iThumb)+'/'+str(pks[2])+'/'+str(pks[2])+'.jpg' ))      
+        self.i4.setPixmap(QtGui.QPixmap( str(iThumb)+'/'+str(pks[3])+'/'+str(pks[3])+'.jpg' ))      
+        self.i5.setPixmap(QtGui.QPixmap( str(iThumb)+'/'+str(pks[4])+'/'+str(pks[4])+'.jpg' ))      
+        self.i6.setPixmap(QtGui.QPixmap( str(iThumb)+'/'+str(pks[5])+'/'+str(pks[5])+'.jpg' ))      
         
         if not userLoggedIn:
             self.shutBtn.hide()
         self.show()
 
         self.shutBtn.clicked.connect(self.shutUser)
-        self.t1.clicked.connect(lambda: self.nPage(0))
+        self.t1.clicked.connect(lambda: self.nPage(pks[0]))
+        self.t2.clicked.connect(lambda: self.nPage(pks[1]))
+        self.t3.clicked.connect(lambda: self.nPage(pks[2]))
+        self.t4.clicked.connect(lambda: self.nPage(pks[3]))
+        self.t5.clicked.connect(lambda: self.nPage(pks[4]))
+        self.t6.clicked.connect(lambda: self.nPage(pks[5]))
+        names = []
+        for i in range(6):
+            dBconf.getPlanetInfo(i)
+            n = str(dBconf.getPlanetInfo.name)
+            names.append(n)
+        self.t1.setText(names[0])
+        self.t2.setText(names[1])
+        self.t3.setText(names[2])
+        self.t4.setText(names[3])
+        self.t5.setText(names[4])
+        self.t6.setText(names[5])
         self.gearBtn.clicked.connect(lambda: redirect("UserSettings"))
+        self.homeBtn.clicked.connect(lambda: redirect("HomePage"))
 
     def nPage(self, pk):
         dBconf.getPlanetInfo(pk)
@@ -197,23 +219,28 @@ class HomePage(QMainWindow):
         self.made.setText(str(dBconf.getPlanetInfo.madeof))
         self.lum.setText(str(dBconf.getPlanetInfo.lum))
         self.vis.setText(str(dBconf.getPlanetInfo.visible))
-        # self.nextBtn.clicked.connect(self.broadInfo)
+        self.nextPage.clicked.connect(lambda: self.broadInfo(pk))
+        self.gearBtn.clicked.connect(lambda: redirect("UserSettings"))
+        self.homeBtn.clicked.connect(lambda: redirect("HomePage"))
+        self.shutBtn.clicked.connect(self.shutUser)
 
-    def broadInfo(self):
-        pass
+    def broadInfo(self, pk):
+        dBconf.getPlanetInfo(pk)
+        uic.loadUi(uiPath+"/broad_info.ui", self)
+        self.logo.setPixmap(QtGui.QPixmap('rsdx.png'))
+        self.thumb.setPixmap(QtGui.QPixmap( str(iThumb)+'/'+str(pk)+'/'+str(pk)+'.jpg' ))
+        self.title.setText("More About "+str(dBconf.getPlanetInfo.name))
+        self.body.setText(str(dBconf.getPlanetInfo.body))
+        self.body.setWordWrap(True)
+        self.backPage.clicked.connect(lambda: self.nPage(pk))
+        self.gearBtn.clicked.connect(lambda: redirect("UserSettings"))
+        self.homeBtn.clicked.connect(lambda: redirect("HomePage"))
+        self.shutBtn.clicked.connect(self.shutUser)
 
 
     def shutUser(self):
         userNow[0] = "Anon"
         redirect("UI")
-
-class InfoPage(QMainWindow):
-    def __init__(self):
-        super(InfoPage, self).__init__()
-        uic.loadUi(uiPath+"/planet_info.ui", self)
-        self.logo.setPixmap(QtGui.QPixmap('rsdx.png'))
-        self.imgMain.setPixmap(QtGui.QPixmap('saturn-v2.jpg'))
-        self.objName.setText("About "+ whichObj[0])
         
 
 
