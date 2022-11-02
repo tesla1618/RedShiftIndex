@@ -121,7 +121,7 @@ color: white;
 padding: 10px;</string>
     </property>
     <property name="text">
-     <string>Welcome to Redshift Index!</string>
+     <string>রেডশিফটে স্বাগতম</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -175,11 +175,107 @@ padding: 10px;</string>
      <string>CONTINUE AS ANON</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="nav_homeBtn">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>480</y>
+      <width>90</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{background: none;
+color: white;
+border: none;
+border: 1px solid transparent}
+*:hover{ border-bottom: 1px solid white}</string>
+    </property>
+    <property name="text">
+     <string>Home</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="nav_aboutBtn">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>480</y>
+      <width>90</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{background: none;
+color: white;
+border: none;
+border: 1px solid transparent}
+*:hover{ border-bottom: 1px solid white}</string>
+    </property>
+    <property name="text">
+     <string>About</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="nav_teamBtn">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>480</y>
+      <width>90</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{background: none;
+color: white;
+border: none;
+border: 1px solid transparent}
+*:hover{ border-bottom: 1px solid white}</string>
+    </property>
+    <property name="text">
+     <string>Team</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="nav_rlsBtn">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>480</y>
+      <width>90</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{background: none;
+color: white;
+border: none;
+border: 1px solid transparent}
+*:hover{ border-bottom: 1px solid white}</string>
+    </property>
+    <property name="text">
+     <string>Releases</string>
+    </property>
+   </widget>
    <zorder>loginBtn</zorder>
    <zorder>wlcText</zorder>
    <zorder>regBtn</zorder>
    <zorder>anonBtn</zorder>
    <zorder>logo</zorder>
+   <zorder>nav_homeBtn</zorder>
+   <zorder>nav_aboutBtn</zorder>
+   <zorder>nav_teamBtn</zorder>
+   <zorder>nav_rlsBtn</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

@@ -81,11 +81,11 @@
      <number>0</number>
     </property>
    </widget>
-   <widget class="QLabel" name="objName">
+   <widget class="QLabel" name="title">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>170</y>
+      <x>360</x>
+      <y>130</y>
       <width>291</width>
       <height>41</height>
      </rect>
@@ -236,11 +236,11 @@ border-bottom: 3px solid rgb(237, 51, 59);
      <string>shut</string>
     </property>
    </widget>
-   <widget class="QLabel" name="imgMain">
+   <widget class="QLabel" name="thumb">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>190</y>
+      <x>50</x>
+      <y>150</y>
       <width>261</width>
       <height>261</height>
      </rect>
@@ -255,8 +255,8 @@ border-bottom: 3px solid rgb(237, 51, 59);
    <widget class="QPushButton" name="nextPage">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>470</y>
+      <x>560</x>
+      <y>450</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -277,26 +277,250 @@ border-radius: 6px;</string>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>250</y>
-      <width>55</width>
-      <height>18</height>
+      <x>360</x>
+      <y>190</y>
+      <width>121</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string> </string>
+     <string>নক্ষত্রের নাম</string>
     </property>
    </widget>
-   <zorder>objName</zorder>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>220</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>নক্ষত্রের ভর</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>280</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>পৃথিবী থেকে দূরত্ব</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>250</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>নক্ষত্রের ব্যাসার্ধ</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>310</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>দ্বারা গঠিত</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>370</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>খালি চোখে দৃশ্যমান</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>340</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>নক্ষত্রের ঔজ্জ্বল্য</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="name">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>190</y>
+      <width>55</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mass">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>220</y>
+      <width>55</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>mass</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="vis">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>370</y>
+      <width>55</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>vis</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="made">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>310</y>
+      <width>55</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>made</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dis">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>280</y>
+      <width>55</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>dis</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="radius">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>250</y>
+      <width>55</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>radius</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lum">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>340</y>
+      <width>55</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>lum</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mass_2">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>220</y>
+      <width>55</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>kg</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="radius_2">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>250</y>
+      <width>55</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>km</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dis_2">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>280</y>
+      <width>55</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>km</string>
+    </property>
+   </widget>
+   <zorder>title</zorder>
    <zorder>logo</zorder>
    <zorder>homeBtn</zorder>
    <zorder>catsBtn</zorder>
    <zorder>tryBtn</zorder>
    <zorder>gearBtn</zorder>
    <zorder>shutBtn</zorder>
-   <zorder>imgMain</zorder>
+   <zorder>thumb</zorder>
    <zorder>nextPage</zorder>
    <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_6</zorder>
+   <zorder>label_7</zorder>
+   <zorder>name</zorder>
+   <zorder>mass</zorder>
+   <zorder>vis</zorder>
+   <zorder>made</zorder>
+   <zorder>dis</zorder>
+   <zorder>radius</zorder>
+   <zorder>lum</zorder>
+   <zorder>mass_2</zorder>
+   <zorder>radius_2</zorder>
+   <zorder>dis_2</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

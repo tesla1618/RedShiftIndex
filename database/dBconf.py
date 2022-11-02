@@ -41,9 +41,10 @@ c.execute(
 c.execute(
     '''
     CREATE TABLE IF NOT EXISTS basicInfo
-    ([pk] INTEGER PRIMARY KEY, [radius] REAL, [disEarth] REAL, [disSun] REAL, [lum] REAL, [visEarth] TEXT, [madeOf] TEXT, [thumbnail] BLOB)
+    ([pk] INTEGER PRIMARY KEY,[Objname] TEXT, [mass] REAL, [radius] REAL, [disEarth] REAL, [madeOf] TEXT, [lum] REAL, [visEarth] TEXT, [thumbnail] BLOB)
     '''
 )
+
 
 #       Creating Table to store Brief PostBody
 
@@ -152,13 +153,51 @@ def addObjInfoToDB(name,mass,radius,disEarth,madeOf,lum,visible,brinfo,thumbPath
             ''',(pk,name,newThumbPath)
         )
         dBconnect.commit()
+        c.execute(
+            '''
+            INSERT INTO basicInfo
+            VALUES(?,?,?,?,?,?,?,?,?)
+            ''',(pk,name,mass,radius,disEarth,madeOf,lum,visible,newThumbPath)
+        )
+        dBconnect.commit()
+        c.execute(
+            '''
+            INSERT INTO broadInfo
+            VALUES(?,?)
+            ''',(pk,brinfo)
+        )
+        dBconnect.commit()
         addObjInfoToDB.fetchError = False
-        print(pk,name,newThumbPath)
+        # print(pk,name,newThumbPath)
     except:
         addObjInfoToDB.fetchError = True
 
 
 # os.system(f"mkdir {curDir}/images/thumbnails/")
+
+
+
+def getPlanetInfo(pk):
+    c.execute(
+        '''
+        SELECT * from basicInfo WHERE pk = ?
+        ''',(pk,)
+    )
+    # [pk] INTEGER PRIMARY KEY,[Objname] TEXT, [mass] REAL, [radius] REAL,
+    # [disEarth] REAL, [madeOf] TEXT, [lum] REAL, [visEarth] TEXT, [thumbnail] BLOB
+    val = c.fetchone()
+    getPlanetInfo.name = val[1]
+    getPlanetInfo.mass = val[2]
+    getPlanetInfo.radius = val[3]
+    getPlanetInfo.dis = val[4]
+    getPlanetInfo.madeof = val[5]
+    getPlanetInfo.lum = val[6]
+    getPlanetInfo.visible = val[7]
+    getPlanetInfo.thumb = val[8]
+    # print(name,mass,radius,dis,madeof,lum,visible,thumb)
+
+getPlanetInfo(0)
+
 
 c.execute(
     '''
@@ -167,8 +206,29 @@ c.execute(
 )
 
 print("\n----------------------\n\t TABLE:::\n------------------------")
-getUserInfo = pd.DataFrame(c.fetchall(),columns=['pk', 'objectName', 'thumbnail'])
+# getUserInfo = pd.DataFrame(c.fetchall(),columns=['pk', 'objectName', 'thumbnail'])
+# print(getUserInfo)
+record = c.fetchone()
+print(record[1])
+c.execute(
+    '''
+    SELECT * FROM basicInfo
+    '''
+)
+
+print("\n----------------------\n\t TABLE:::\n------------------------")
+getUserInfo = pd.DataFrame(c.fetchall(),columns=['pk', 'Objname', 'mass','radius','disEarth','madeOf','lum','visEarth','thumbnail'])
 print(getUserInfo)
+c.execute(
+    '''
+    SELECT * FROM broadInfo
+    '''
+)
+
+print("\n----------------------\n\t TABLE:::\n------------------------")
+getUserInfo = pd.DataFrame(c.fetchall(),columns=['pk', 'postBody'])
+print(getUserInfo)
+# [pk] INTEGER PRIMARY KEY,[Objname] TEXT, [mass] REAL, [radius] REAL, [disEarth] REAL, [madeOf] TEXT, [lum] REAL, [visEarth] TEXT, [thumbnail] BLOB
 
 
 

@@ -51,7 +51,7 @@
     <property name="geometry">
      <rect>
       <x>250</x>
-      <y>40</y>
+      <y>30</y>
       <width>199</width>
       <height>50</height>
      </rect>
@@ -85,7 +85,7 @@
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>120</y>
+      <y>110</y>
       <width>291</width>
       <height>41</height>
      </rect>
@@ -107,7 +107,7 @@ padding: 10px;</string>
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>390</y>
+      <y>380</y>
       <width>221</width>
       <height>71</height>
      </rect>
@@ -132,7 +132,7 @@ padding: 10px;</string>
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>190</y>
+      <y>180</y>
       <width>431</width>
       <height>51</height>
      </rect>
@@ -152,7 +152,7 @@ border-radius: 5px;</string>
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>250</y>
+      <y>240</y>
       <width>431</width>
       <height>51</height>
      </rect>
@@ -172,7 +172,7 @@ border-radius: 5px;</string>
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>310</y>
+      <y>300</y>
       <width>431</width>
       <height>51</height>
      </rect>
@@ -192,7 +192,7 @@ border-radius: 5px;</string>
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>390</y>
+      <y>380</y>
       <width>201</width>
       <height>71</height>
      </rect>
@@ -204,9 +204,9 @@ border-radius: 5px;</string>
      <string notr="true">* {border: 1px solid rgb(51, 209, 122);
 		color:white;
 		background: rgb(51, 209, 122);
-		font-size: 17px;
+		font-size: 15px;
 		border-radius:10px;
-		padding:15px;}
+		padding:10px;}
        *:hover{ background:none;border: 1px solid rgb(51, 209, 122); color: white; }</string>
     </property>
     <property name="text">
@@ -218,7 +218,7 @@ ACCOUNT?</string>
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>120</y>
+      <y>110</y>
       <width>391</width>
       <height>41</height>
      </rect>
@@ -236,6 +236,98 @@ padding: 10px;</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QPushButton" name="nav_aboutBtn">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>480</y>
+      <width>90</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{background: none;
+color: white;
+border: none;
+border: 1px solid transparent}
+*:hover{ border-bottom: 1px solid white}</string>
+    </property>
+    <property name="text">
+     <string>About</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="nav_teamBtn">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>480</y>
+      <width>90</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{background: none;
+color: white;
+border: none;
+border: 1px solid transparent}
+*:hover{ border-bottom: 1px solid white}</string>
+    </property>
+    <property name="text">
+     <string>Team</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="nav_rlsBtn">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>480</y>
+      <width>90</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{background: none;
+color: white;
+border: none;
+border: 1px solid transparent}
+*:hover{ border-bottom: 1px solid white}</string>
+    </property>
+    <property name="text">
+     <string>Releases</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="nav_homeBtn">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>480</y>
+      <width>90</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{background: none;
+color: white;
+border: none;
+border: 1px solid transparent}
+*:hover{ border-bottom: 1px solid white}</string>
+    </property>
+    <property name="text">
+     <string>Home</string>
+    </property>
+   </widget>
    <zorder>wlcText</zorder>
    <zorder>regBtn</zorder>
    <zorder>logo</zorder>
@@ -244,6 +336,10 @@ padding: 10px;</string>
    <zorder>passwd_2</zorder>
    <zorder>loginBtn</zorder>
    <zorder>errorMsg</zorder>
+   <zorder>nav_aboutBtn</zorder>
+   <zorder>nav_teamBtn</zorder>
+   <zorder>nav_rlsBtn</zorder>
+   <zorder>nav_homeBtn</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

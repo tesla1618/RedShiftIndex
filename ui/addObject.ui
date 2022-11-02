@@ -412,6 +412,29 @@ border-radius: 8px;</string>
      <string/>
     </property>
    </widget>
+   <widget class="QPushButton" name="nav_homeBtn">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>480</y>
+      <width>90</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{background: none;
+color: white;
+border: none;
+border: 1px solid transparent}
+*:hover{ border-bottom: 1px solid white}</string>
+    </property>
+    <property name="text">
+     <string>Home</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

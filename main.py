@@ -3,6 +3,8 @@ import sys
 import os
 curDir = os.path.dirname(os.path.realpath(__file__))    #   Getting current directory
 dbPath = os.path.join(curDir, 'database')               #   Joining database folder with curDir
+imgTemp = os.path.join(curDir, 'images')
+iThumb = os.path.join(imgTemp, 'thumbnails')
 sys.path.append(dbPath)                                 #   Adding the dBconf.py to sys
 
 
@@ -10,7 +12,7 @@ sys.path.append(dbPath)                                 #   Adding the dBconf.py
 import dBconf
 
 from header import *
-from fconfig import *
+# from fconfig import *
 
 whichObj = []
 userLoggedIn = True
@@ -47,6 +49,7 @@ class UI(QMainWindow):
 
 
         self.log_btn.clicked.connect(self.loginPage)
+        
         self.regBtn.clicked.connect(self.regPage)
         self.anonBtn.clicked.connect(self.anonGetway)
 
@@ -79,6 +82,7 @@ class RSDXLoginPage(QMainWindow):
         self.show()
 
         self.loginBtn.clicked.connect(self.methodLogin)
+        self.nav_homeBtn.clicked.connect(lambda:redirect("UI"))
         self.regBtn.clicked.connect(self.goToReg)
 
     def methodLogin(self):
@@ -166,8 +170,8 @@ class HomePage(QMainWindow):
         super(HomePage, self).__init__()
         uic.loadUi(uiPath+"/homepage.ui", self)
         self.logo.setPixmap(QtGui.QPixmap('rsdx.png'))
-        self.wlcText.setText("Welcome "+ userNow[0])
-        self.imgMain.setPixmap(QtGui.QPixmap('saturn-v2.jpg'))
+        # self.wlcText.setText("Welcome "+ userNow[0])
+        self.i1.setPixmap(QtGui.QPixmap('saturn-v2.jpg'))
         # self.post.setWordWrap(True)
         # self.scrollArea.setWidget(self.post)      
         
@@ -176,30 +180,23 @@ class HomePage(QMainWindow):
         self.show()
 
         self.shutBtn.clicked.connect(self.shutUser)
-        self.nextPage.clicked.connect(lambda: self.nPage("Pluto"))
+        self.t1.clicked.connect(lambda: self.nPage(0))
         self.gearBtn.clicked.connect(lambda: redirect("UserSettings"))
 
-    def nPage(self, tag):
-        tag = "saturn"
-        if tag == "saturn":
-            uic.loadUi(uiPath+"/addObject.ui", self)
-            self.logo.setPixmap(QtGui.QPixmap('rsdx.png'))
-            self.objName.setPlaceholderText("Name of Object")
-            self.objMass.setPlaceholderText("Mass of Object")
-            self.objRadius.setPlaceholderText("Radius of Object")
-            self.objDisEarth.setPlaceholderText("Distance of Object from Earth")
-            self.objMadeOf.setPlaceholderText("Object Made of")
-            self.objLum.setPlaceholderText("Luminosity of Object")
-            self.isVisible.setPlaceholderText("Visible in naked eye from earth?")
-            self.briefInfo.setPlaceholderText("Write more about the Object briefly")
-            # self.imgMain.setPixmap(QtGui.QPixmap('saturn-v2.jpg'))
-            # self.imgMain_2.setPixmap(QtGui.QPixmap('saturn-v2.jpg'))
-            # self.nextPage.clicked.connect(lambda: redirect("HomePage"))
-            
-        else:
-            whichObj.append(tag)
-            redirect("InfoPage")
-
+    def nPage(self, pk):
+        dBconf.getPlanetInfo(pk)
+        uic.loadUi(uiPath+"/planet_info.ui", self)
+        self.logo.setPixmap(QtGui.QPixmap('rsdx.png'))
+        self.thumb.setPixmap(QtGui.QPixmap(str(dBconf.getPlanetInfo.thumb)))
+        print(str(iThumb)+'/'+str(pk)+'/'+str(pk)+'.png')
+        self.title.setText("About "+str(dBconf.getPlanetInfo.name))
+        self.name.setText(str(dBconf.getPlanetInfo.name))
+        self.mass.setText(str(dBconf.getPlanetInfo.mass))
+        self.radius.setText(str(dBconf.getPlanetInfo.radius))
+        self.dis.setText(str(dBconf.getPlanetInfo.dis))
+        self.made.setText(str(dBconf.getPlanetInfo.madeof))
+        self.lum.setText(str(dBconf.getPlanetInfo.lum))
+        self.vis.setText(str(dBconf.getPlanetInfo.visible))
 
     def shutUser(self):
         userNow[0] = "Anon"
@@ -245,6 +242,7 @@ class AdminPanel(QMainWindow):
 
 
     def addtoDB(self):
+        inFields = [self.objName,self.objMass,self.objRadius,self.objDisEarth,self.objMadeOf,self.objLum,self.isVisible,self.briefInfo,self.thumbPath]
         name = self.objName.text()
         mass = self.objMass.text()
         radius = self.objRadius.text()
@@ -257,10 +255,19 @@ class AdminPanel(QMainWindow):
         # os.system(f"cp {thumbPath} {pk} {curDir}/images/thumbnails")
         # newThumbPath = str(curDir)+"/images/thumbnails/"
         # print(name,mass,radius,disEarth,madeOf,lum,visible,brinfo,thumbPath)
-        if len(name) != 0:
+        inVars = [name,mass,radius,disEarth,madeOf,lum,visible,brinfo,thumbPath]
+        if len(name) != 0 and len(mass) != 0 and len(radius) != 0 and len(lum) != 0 and len(thumbPath) != 0:
             dBconf.addObjInfoToDB(name,mass,radius,disEarth,madeOf,lum,visible,brinfo,thumbPath)
+            redirect("AdminPanel")
         else:
-            self.objName.setStyleSheet("border: 1px solid red")
+            for f in inFields:
+                f.setStyleSheet('''
+                border: 1px solid red;
+                background-color: rgb(255, 255, 255);
+                color: #3a3a3a;
+                padding: 7px;
+                border-radius: 8px;
+                ''')
 
 
 class UserSettings(QMainWindow):
